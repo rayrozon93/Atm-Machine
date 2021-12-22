@@ -1,0 +1,52 @@
+#include <iostream>
+#include <string>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+
+    int selection, balance = 5000, withdrawalAmount, depositAmount;
+
+    cout<<"Welcome to Ray Bank!"<<endl;
+    cout<<"Please select an option:"<<endl;
+    cout<<"1. Check Balance"<<endl;
+    cout<<"2. Withdrawal"<<endl;
+    cout<<"3. Deposit"<<endl;
+    cout<<"4. Exit"<<endl;
+
+    returnToPrompt:
+        cout<<"Enter Number: "<<endl;
+        cin>>selection;
+
+        if (selection==1) {
+            cout<<"Your current balance is "<<balance<<endl;
+            goto returnToPrompt;
+        }
+        else if (selection==2) {
+            cout<<"Enter the amount you want to withdrawal:"<<endl;
+            cin>>withdrawalAmount;
+            balance-=withdrawalAmount;
+            cout<<"Your current balance is "<<balance<<endl;
+            goto returnToPrompt;
+        }
+        else if (selection==3) {
+            cout<<"Enter the amount you want to deposit:"<<endl;
+            cin>>depositAmount;
+            balance+=depositAmount;
+            cout<<"Your current balance is: "<<balance<<endl;
+            goto returnToPrompt;
+        }
+        else if (selection==4) {
+            cout<<"Thank you for using the system! Have a great day."<<endl;
+        }
+        else {
+            cout<<"Your selection is invalid. Please try again."<<endl;
+            goto returnToPrompt;
+        }
+
+        return 0;
+
+
+
+}
